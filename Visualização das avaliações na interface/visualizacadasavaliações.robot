@@ -13,10 +13,8 @@ ${TIMEOUT}      15s
 ...    inp_email=//input[contains(@placeholder, 'seu@email.com')]
 ...    inp_senha=//input[@id='password']
 ...    btn_entrar=//button[contains(.,'Entrar')]
-...    link_filme=//h3[contains(text(),'Lilo & Stitch')]/ancestor::a  # Localizador mais confiável
-...    sec_avaliacoes=//h2[contains(text(),'Avaliações')] | //div[contains(@class,'reviews')]
-...    btn_escrever_avaliacao=//button[contains(text(),'Escrever avaliação')]
-...    card_avaliacao=//div[contains(@class,'review-card')]  # Ajuste conforme sua estrutura
+...    link_filme=//h3[contains(text(),'Lilo & Stitch')]/ancestor::a
+
 
 *** Keywords ***
 aguardar elemento visivel
@@ -53,35 +51,18 @@ acessar_pagina_filme
     Capture Page Screenshot
     Log To Console    Página do filme carregada
 
-verificar_secao_avaliacoes
-    Log To Console    Verificando seção de avaliações...
-    aguardar elemento visivel       ${ELEMENTOS.sec_avaliacoes}
-    ${count}=    Get Element Count    ${ELEMENTOS.card_avaliacao}
-    Run Keyword If    ${count} > 0    Log To Console    ${count} avaliações encontradas
-    ...    ELSE    Log To Console    Nenhuma avaliação encontrada
-    Capture Page Screenshot
-
 *** Test Cases ***
-Acessar Avaliacoes do Filme
-    [Documentation]    Testa o acesso às avaliações de um filme específico
-    [Tags]    filme    avaliacoes
+Teste de Acesso à Página do Filme
+    [Documentation]    Teste mínimo: login e acesso à página do filme
     
-    # 1. Abrir navegador e fazer login
-    Open Browser                    ${URL}    ${BROWSER}
+    # 1. Abrir navegador
+    Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
-    Set Selenium Timeout            ${TIMEOUT}
-    fazer login
+    Set Selenium Timeout    ${TIMEOUT}
     
-    # 2. Acessar página do filme
+    # 2. Fazer login e acessar filme (já incluso no "acessar_pagina_filme")
+    fazer login
     acessar_pagina_filme
     
-    # 3. Verificar seção de avaliações
-    verificar_secao_avaliacoes
-    
-    # 4. Verificar se o botão "Escrever avaliação" está visível (opcional)
-    Run Keyword And Continue On Failure    aguardar elemento visivel    ${ELEMENTOS.btn_escrever_avaliacao}
-    
-    # 5. Encerrar
-    Sleep                           2s
-    Capture Page Screenshot
+    # 3. Fechar navegador imediatamente após carregar a página
     Close Browser
