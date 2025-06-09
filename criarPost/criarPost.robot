@@ -132,6 +132,15 @@ aguardar toast e encerrar
         Log To Console    Finalizando teste.
     END
 
+post criado
+    [Documentation]    Valida visualização do toast e encerra
+    Element Should Be Visible    ${ELEMENTOS.toast_sucesso}
+    Capture Page Screenshot
+    Close Browser
+
+
+    
+
 *** Test Cases ***
 Login e Postar no Feed
     [Documentation]    Faz login e posta no feed do NextFilm
@@ -168,9 +177,8 @@ Teste simples de post no feed
     Sleep    5s
     
     When preencher e postar descricao no feed
-    Then Sleep    2s
-    And Capture Page Screenshot
-    And Close Browser
+    Then post criado
+    
 
 Teste com validacao de texto no campo
     [Documentation]    
