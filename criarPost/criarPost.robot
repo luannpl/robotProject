@@ -47,7 +47,7 @@ preencher dados de login
 preencher e postar descricao no feed
     aguardar elemento visivel       ${ELEMENTOS.inp_feed}
     Clear Element Text              ${ELEMENTOS.inp_feed}
-    Input Text                      ${ELEMENTOS.inp_feed}       meu primeiro teste
+    Input Text                      ${ELEMENTOS.inp_feed}       Meu filme favorito
     
     # SCREENSHOT IMEDIATO após Input Text
     Capture Page Screenshot
@@ -58,7 +58,7 @@ preencher e postar descricao no feed
     # Validar se o texto foi realmente inserido
     ${texto_atual}=                 Get Value    ${ELEMENTOS.inp_feed}
     Log To Console                  Texto no campo: ${texto_atual}
-    Should Be Equal                 ${texto_atual}    meu primeiro teste
+    Should Be Equal                 ${texto_atual}    Meu filme favorito
     
     aguardar elemento clicavel      ${ELEMENTOS.btn_postar}
     Click Element                   ${ELEMENTOS.btn_postar}
@@ -88,7 +88,7 @@ postar no feed
     Capture Page Screenshot
     
     Log To Console    Digitando texto...
-    Input Text                      ${ELEMENTOS.inp_feed}    meu primeiro teste
+    Input Text                      ${ELEMENTOS.inp_feed}    Meu filme favorito
     
     # SCREENSHOT IMEDIATO após digitar
     Capture Page Screenshot
@@ -100,7 +100,7 @@ postar no feed
     ${texto_inserido}=              Get Value    ${ELEMENTOS.inp_feed}
     Log To Console                  Texto atual no campo: '${texto_inserido}'
     Should Not Be Empty             ${texto_inserido}
-    Should Contain                  ${texto_inserido}    meu primeiro teste
+    Should Contain                  ${texto_inserido}    Meu filme favorito
     
     Log To Console    Procurando botão postar...
     aguardar elemento clicavel      ${ELEMENTOS.btn_postar}
@@ -165,46 +165,39 @@ Teste simples de post no feed
     And preencher dados de login
     And realizar clique    ${ELEMENTOS.btn_entrar}
     
-    # Aguarda a página carregar completamente
     Sleep    5s
     
-    # Tenta postar diretamente no feed
     When preencher e postar descricao no feed
     Then Sleep    2s
     And Capture Page Screenshot
     And Close Browser
 
-# NOVO: Teste focado na validação do texto
 Teste com validacao de texto no campo
-    [Documentation]    Teste específico para validar se o texto está sendo inserido corretamente
+    [Documentation]    
     [Tags]    feed    validacao
     
     Open Browser                    ${URL}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Timeout            ${TIMEOUT}
     
-    # Login
     fazer login
     Sleep                           3s
     
-    # Validar campo do feed e inserir texto
     aguardar elemento visivel       ${ELEMENTOS.inp_feed}
     Click Element                   ${ELEMENTOS.inp_feed}
     Sleep                           1s
     
-    # Limpar campo antes de inserir
     Clear Element Text              ${ELEMENTOS.inp_feed}
     Sleep                           0.5s
     
-    # Inserir texto e validar
-    Input Text                      ${ELEMENTOS.inp_feed}    meu primeiro teste
+    Input Text                      ${ELEMENTOS.inp_feed}    Meu filme favorito
     Sleep                           1s
     
-    # Screenshot e validação específicos
-    Capture Page Screenshot
-    validar texto no campo feed     meu primeiro teste
     
-    # Continuar com o post
+    Capture Page Screenshot
+    validar texto no campo feed     Meu filme favorito
+    
+    
     Click Element                   ${ELEMENTOS.btn_postar}
     Sleep                           2s
     Capture Page Screenshot

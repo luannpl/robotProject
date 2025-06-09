@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.8.10 on linux)" generated="2025-06-08T21:02:32.651781" rpa="false" schemaversion="5">
+<suite id="s1" name="criarPost" source="/home/luan/Documentos/projetos/robotProject/criarPost/criarPost.robot">
+<test id="s1-t1" name="Teste simples de post no feed" line="162">
+<kw name="Given abrir o site">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-08T21:02:32.816206" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/auth/signin'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-08T21:02:32.815704" elapsed="1.097215"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-08T21:02:33.913890" elapsed="0.043678"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-06-08T21:02:33.958344" elapsed="0.002323"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-08T21:02:34.394305" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-08T21:02:33.961236" elapsed="0.433431"/>
+</kw>
+<status status="PASS" start="2025-06-08T21:02:32.814647" elapsed="1.580215"/>
+</kw>
+<kw name="And preencher dados de login">
+<kw name="aguardar elemento visivel">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-08T21:02:34.396604" elapsed="0.021192"/>
+</kw>
+<arg>${ELEMENTOS.inp_email}</arg>
+<status status="PASS" start="2025-06-08T21:02:34.395762" elapsed="0.022634"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-08T21:02:34.420242" level="INFO">Typing text 'pl@gmail.com' into text field '//input[contains(@placeholder, 'seu@email.com')]'.</msg>
+<arg>${ELEMENTOS.inp_email}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-08T21:02:34.418883" elapsed="0.118065"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-08T21:02:34.540124" level="INFO">Typing text '123456' into text field '//input[@id='password']'.</msg>
+<arg>${ELEMENTOS.inp_senha}</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-08T21:02:34.538317" elapsed="0.086136"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-08T21:02:34.980247" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-08T21:02:34.624962" elapsed="0.355619"/>
+</kw>
+<status status="PASS" start="2025-06-08T21:02:34.395281" elapsed="0.585497"/>
+</kw>
+<kw name="And realizar clique">
+<kw name="aguardar elemento visivel">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-08T21:02:34.983134" elapsed="0.023277"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2025-06-08T21:02:34.982364" elapsed="0.024341"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-08T21:02:35.007440" level="INFO">Clicking element '//button[contains(.,'Entrar')]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-08T21:02:35.006977" elapsed="0.057039"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-08T21:02:37.065878" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-08T21:02:35.064589" elapsed="2.002198"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-08T21:02:37.314361" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-08T21:02:37.067691" elapsed="0.247057"/>
+</kw>
+<arg>${ELEMENTOS.btn_entrar}</arg>
+<status status="PASS" start="2025-06-08T21:02:34.981356" elapsed="2.333699"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-08T21:02:42.316587" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-08T21:02:37.315850" elapsed="5.001371"/>
+</kw>
+<kw name="When preencher e postar descricao no feed">
+<kw name="aguardar elemento visivel">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-08T21:02:42.322171" elapsed="0.035899"/>
+</kw>
+<arg>${ELEMENTOS.inp_feed}</arg>
+<status status="PASS" start="2025-06-08T21:02:42.320227" elapsed="0.038338"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${ELEMENTOS.inp_feed}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-08T21:02:42.359042" elapsed="0.030842"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-08T21:02:42.391138" level="INFO">Typing text 'Meu filme favorito' into text field '//textarea[contains(@placeholder, 'O que você está pensando?')]'.</msg>
+<arg>${ELEMENTOS.inp_feed}</arg>
+<arg>Meu filme favorito</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-08T21:02:42.390275" elapsed="0.113766"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-08T21:02:42.709289" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-08T21:02:42.504840" elapsed="0.204786"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Screenshot IMEDIATO - Texto digitado no campo do feed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-08T21:02:42.709930" elapsed="0.000360"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-08T21:02:43.710984" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-08T21:02:42.710516" elapsed="1.001296"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-06-08T21:02:43.743773" level="INFO">${texto_atual} = Meu filme favorito</msg>
+<var>${texto_atual}</var>
+<arg>${ELEMENTOS.inp_feed}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-08T21:02:43.712623" elapsed="0.031563"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Texto no campo: ${texto_atual}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-08T21:02:43.744712" elapsed="0.001153"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${texto_atual}</arg>
+<arg>Meu filme favorito</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-06-08T21:02:43.746684" elapsed="0.001141"/>
+</kw>
+<kw name="aguardar elemento clicavel">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-06-08T21:02:43.751482" elapsed="0.039801"/>
+</kw>
+<arg>${ELEMENTOS.btn_postar}</arg>
+<status status="PASS" start="2025-06-08T21:02:43.748849" elapsed="0.042732"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-08T21:02:43.792675" level="INFO">Clicking element '//button[contains(text(), 'Postar')]'.</msg>
+<arg>${ELEMENTOS.btn_postar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-08T21:02:43.791841" elapsed="0.056554"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-08T21:02:46.850732" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-08T21:02:43.849755" elapsed="3.001911"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-08T21:02:47.024905" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-08T21:02:46.852752" elapsed="0.172492"/>
+</kw>
+<status status="PASS" start="2025-06-08T21:02:42.318528" elapsed="4.706903"/>
+</kw>
+<kw name="Then Sleep" owner="BuiltIn">
+<msg time="2025-06-08T21:02:49.026410" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-08T21:02:47.025858" elapsed="2.001139"/>
+</kw>
+<kw name="And Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-08T21:02:49.204479" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-08T21:02:49.027653" elapsed="0.177168"/>
+</kw>
+<kw name="And Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-08T21:02:49.205290" elapsed="0.070087"/>
+</kw>
+<tag>feed</tag>
+<tag>simples</tag>
+<status status="PASS" start="2025-06-08T21:02:32.813544" elapsed="16.462462"/>
+</test>
+<status status="PASS" start="2025-06-08T21:02:32.655824" elapsed="16.621170"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">feed</stat>
+<stat pass="1" fail="0" skip="0">simples</stat>
+</tag>
+<suite>
+<stat name="criarPost" id="s1" pass="1" fail="0" skip="0">criarPost</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
